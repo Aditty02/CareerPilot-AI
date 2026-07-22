@@ -6,23 +6,43 @@ async function generateRoadmap() {
     const goal = document.getElementById("goal").value;
     const hours = document.getElementById("hours").value;
 
-    document.getElementById("output").innerText = "Generating roadmap...";
+    const output = document.getElementById("output");
+    const button = document.querySelector("button");
 
-    const response = await fetch("http://127.0.0.1:5000/generate", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            branch,
-            semester,
-            skills,
-            goal,
-            hours
-        })
-    });
+    // Show loading message
+    output.innerText = "⏳ Generating your personalized roadmap...\n\nPlease wait...";
 
-    const data = await response.json();
+    // Disable button while loading
+    button.disabled = true;
+    button.innerText = "Generating...";
 
-    document.getElementById("output").innerText = data.response;
+    try {
+
+        const response = await fetch("http://127.0.0.1:5000/generate", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                branch,
+                semester,
+                skills,
+                goal,
+                hours
+            })
+        });
+
+        const data = await response.json();
+
+        output.innerText = data.response;
+
+    } catch (error) {
+
+        output.innerText = "❌ Something went wrong. Please try again.";
+
+    }
+
+    // Re-enable button
+    button.disabled = false;
+    button.innerText = "🚀 Generate AI Roadmap";
 }

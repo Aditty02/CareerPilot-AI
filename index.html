@@ -1,28 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CareerPilot AI</title>
+
     <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
+<footer>
+Built with ❤️ using Google Gemini API | HackVerse 2026
+</footer>
 <body>
 
-<h1>CareerPilot AI</h1>
+<div class="container">
 
-<input type="text" id="branch" placeholder="Branch (CSE, ECE...)"><br><br>
+    <!-- Hero Section -->
+    <div class="hero">
 
-<input type="text" id="semester" placeholder="Semester"><br><br>
+        <div class="logo">🤖</div>
 
-<input type="text" id="skills" placeholder="Current Skills"><br><br>
+        <h1>CareerPilot AI</h1>
 
-<input type="text" id="goal" placeholder="Career Goal"><br><br>
+        <p>Your AI-Powered Career Mentor</p>
 
-<input type="number" id="hours" placeholder="Hours per Week"><br><br>
+    </div>
 
-<button onclick="generateRoadmap()">Generate Roadmap</button>
+    <!-- Form -->
 
-<h2>AI Response</h2>
+    <div class="form">
 
-<pre id="output"></pre>
+        <input type="text" id="branch" placeholder="🎓 Branch (CSE, ECE...)">
+
+        <input type="text" id="semester" placeholder="📖 Semester">
+
+        <input type="text" id="skills" placeholder="💻 Current Skills">
+
+        <input type="text" id="goal" placeholder="🎯 Career Goal">
+
+        <input type="number" id="hours" placeholder="⏰ Study Hours Per Week">
+
+        <button onclick="generateRoadmap()">
+            🚀 Generate AI Roadmap
+        </button>
+
+    </div>
+
+    <!-- Output -->
+
+    <div class="result">
+
+        <h2>📋 AI Generated Career Roadmap</h2>
+
+        <pre id="output">
+Your roadmap will appear here...
+        </pre>
+
+    </div>
+
+</div>
 
 <script src="script.js"></script>
 
