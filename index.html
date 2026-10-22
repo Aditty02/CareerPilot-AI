@@ -1,70 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CareerPilot AI</title>
-
+    <meta name="theme-color" content="#eef0f4">
+    <title>CareerPilot AI — Career workspace</title>
     <link rel="stylesheet" href="style.css">
-
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-
 <body>
+    <main class="workspace">
+        <aside class="sidebar" aria-label="Main navigation">
+            <a class="brand-mark" href="#home" aria-label="CareerPilot home">↗</a>
+            <nav class="side-nav">
+                <a class="nav-item active" href="#home" aria-label="Workspace" title="Workspace"><span>⌂</span></a>
+                <a class="nav-item" href="#profile" aria-label="Profile" title="Profile"><span>♙</span></a>
+                <a class="nav-item" href="#roadmap" aria-label="Roadmap" title="Roadmap"><span>▤</span></a>
+                <a class="nav-item" href="#settings" aria-label="Settings" title="Settings"><span>⚙</span></a>
+            </nav>
+            <div class="sidebar-bottom"><span class="status-dot"></span><span class="avatar-small">S</span></div>
+        </aside>
 
-    <div class="container">
+        <section class="app-shell" id="home">
+            <header class="topbar">
+                <div class="page-title"><span class="brand-mini">↗</span><strong>Career workspace</strong><span class="divider"></span><span class="muted">CareerPilot AI</span></div>
+                <div class="top-actions"><span class="top-date">YOUR NEXT CHAPTER STARTS HERE</span><span class="top-avatar">S</span></div>
+            </header>
 
-        <!-- Hero Section -->
-        <div class="hero">
+            <div class="main-content">
+                <section class="welcome">
+                    <div class="eyebrow"><span class="sparkle">✳</span> YOUR PERSONAL CAREER MENTOR</div>
+                    <h1>Make your next move<br><span>with a clear plan.</span></h1>
+                    <p>Tell us where you are and where you want to go. We’ll map out the steps to get there.</p>
+                </section>
 
-            <div class="logo">🤖</div>
+                <div class="content-grid">
+                    <section class="form panel" id="profile" aria-labelledby="form-title">
+                        <div class="panel-heading">
+                            <div><span class="step-label">01 / YOUR STARTING POINT</span><h2 id="form-title">Build your roadmap</h2></div>
+                            <span class="heading-icon">✳</span>
+                        </div>
+                        <p class="panel-intro">A few details help us make your plan personal.</p>
+                        <label for="branch">Study branch</label>
+                        <input type="text" id="branch" placeholder="e.g. Computer Science, ECE">
+                        <div class="field-row">
+                            <div><label for="semester">Current semester</label><input type="text" id="semester" placeholder="e.g. 4th semester"></div>
+                            <div><label for="hours">Hours per week</label><input type="number" id="hours" min="1" placeholder="e.g. 8"></div>
+                        </div>
+                        <label for="skills">Skills you have</label>
+                        <input type="text" id="skills" placeholder="e.g. Python, Figma, communication">
+                        <label for="goal">Career goal</label>
+                        <input type="text" id="goal" placeholder="e.g. Frontend developer">
+                        <button onclick="generateRoadmap()"><span>Generate my roadmap</span><span class="button-arrow">↗</span></button>
+                        <p class="form-note">✦ &nbsp;Your plan is tailored to your goals and available time.</p>
+                    </section>
 
-            <h1>CareerPilot AI</h1>
-
-            <p>Your AI-Powered Career Mentor</p>
-
-        </div>
-
-        <!-- Form -->
-
-        <div class="form">
-
-            <input type="text" id="branch" placeholder="🎓 Branch (CSE, ECE...)">
-
-            <input type="text" id="semester" placeholder="📖 Semester">
-
-            <input type="text" id="skills" placeholder="💻 Current Skills">
-
-            <input type="text" id="goal" placeholder="🎯 Career Goal">
-
-            <input type="number" id="hours" placeholder="⏰ Study Hours Per Week">
-
-            <button onclick="generateRoadmap()">
-                🚀 Generate AI Roadmap
-            </button>
-
-        </div>
-
-        <!-- Output -->
-
-        <div class="result">
-
-            <h2>📋 AI Generated Career Roadmap</h2>
-
-            <div id="output" class="markdown-body" aria-live="polite">
-                <p class="placeholder">Your roadmap will appear here...</p>
+                    <section class="result panel" id="roadmap" aria-labelledby="roadmap-title">
+                        <div class="panel-heading result-heading">
+                            <div><span class="step-label">02 / YOUR GAME PLAN</span><h2 id="roadmap-title">Career roadmap</h2></div>
+                            <span class="ai-badge"><span></span> AI PLAN</span>
+                        </div>
+                        <div id="output" class="markdown-body" aria-live="polite" aria-atomic="false">
+                            <div class="empty-state"><div class="empty-art"><span class="path-line"></span><span class="path-dot dot-one"></span><span class="path-dot dot-two"></span><span class="path-star">✳</span></div><h3>Your plan will take shape here</h3><p>Complete your profile and generate a personalized path with skills, projects, resources, and interview tips.</p><div class="empty-tags"><span>Learning path</span><span>Project ideas</span><span>Resources</span></div></div>
+                        </div>
+                    </section>
+                </div>
+                <footer><span>CAREERPILOT AI</span><span>Built to help you find your direction <b>✦</b></span></footer>
             </div>
-
-        </div>
-        <footer>
-            Built with ❤️ using Google Gemini API | HackVerse 2026
-        </footer>
-    </div>
-
+        </section>
+    </main>
     <script src="script.js"></script>
-
 </body>
-
 </html>

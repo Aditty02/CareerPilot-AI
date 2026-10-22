@@ -1,12 +1,12 @@
-async function generateRoadmap() {
+﻿async function generateRoadmap() {
     const output = document.getElementById("output");
     const button = document.querySelector("button");
     const payload = Object.fromEntries(["branch", "semester", "skills", "goal", "hours"]
         .map((id) => [id, document.getElementById(id).value]));
 
-    output.innerHTML = '<p class="placeholder">⏳ Generating your personalized roadmap… Please wait.</p>';
+    output.innerHTML = '<p class="placeholder">Generating your personalized roadmap... Please wait.</p>';
     button.disabled = true;
-    button.textContent = "Generating…";
+    button.querySelector("span").textContent = "Generating...";
     try {
         const response = await fetch("http://127.0.0.1:5000/generate", {
             method: "POST",
@@ -20,7 +20,7 @@ async function generateRoadmap() {
         output.textContent = "Something went wrong. Please try again.";
     } finally {
         button.disabled = false;
-        button.textContent = "🚀 Generate AI Roadmap";
+        button.querySelector("span").textContent = "Generate my roadmap"
     }
 }
 
