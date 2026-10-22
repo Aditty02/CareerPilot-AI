@@ -16,7 +16,7 @@ print("api.env exists:", os.path.exists("api.env"))
 genai.configure(api_key=api_key)
 
 # Create Gemini modelE"
-model = genai.GenerativeModel("gemini-2.5-flash")
+model = genai.GenerativeModel("gemini-3.8-flash")
 
 app = Flask(__name__)
 CORS(app)
@@ -45,15 +45,14 @@ Current Skills: {skills}
 Career Goal: {goal}
 Study Hours per Week: {hours}
 
-Generate:
-
+Generate a clear, useful response in Markdown:
 1. A learning roadmap
 2. Skills to learn
 3. Three project ideas
 4. Interview preparation tips
 5. Free learning resources
 
-Use headings and bullet points.
+Use Markdown headings, bullet points, numbered steps where useful, and bold text for key skills or milestones. Keep the structure easy to scan.
 """
 
     response = model.generate_content(prompt)

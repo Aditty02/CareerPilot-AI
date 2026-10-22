@@ -11,59 +11,60 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
-<footer>
-Built with ❤️ using Google Gemini API | HackVerse 2026
-</footer>
+
 <body>
 
-<div class="container">
+    <div class="container">
 
-    <!-- Hero Section -->
-    <div class="hero">
+        <!-- Hero Section -->
+        <div class="hero">
 
-        <div class="logo">🤖</div>
+            <div class="logo">🤖</div>
 
-        <h1>CareerPilot AI</h1>
+            <h1>CareerPilot AI</h1>
 
-        <p>Your AI-Powered Career Mentor</p>
+            <p>Your AI-Powered Career Mentor</p>
 
+        </div>
+
+        <!-- Form -->
+
+        <div class="form">
+
+            <input type="text" id="branch" placeholder="🎓 Branch (CSE, ECE...)">
+
+            <input type="text" id="semester" placeholder="📖 Semester">
+
+            <input type="text" id="skills" placeholder="💻 Current Skills">
+
+            <input type="text" id="goal" placeholder="🎯 Career Goal">
+
+            <input type="number" id="hours" placeholder="⏰ Study Hours Per Week">
+
+            <button onclick="generateRoadmap()">
+                🚀 Generate AI Roadmap
+            </button>
+
+        </div>
+
+        <!-- Output -->
+
+        <div class="result">
+
+            <h2>📋 AI Generated Career Roadmap</h2>
+
+            <div id="output" class="markdown-body" aria-live="polite">
+                <p class="placeholder">Your roadmap will appear here...</p>
+            </div>
+
+        </div>
+        <footer>
+            Built with ❤️ using Google Gemini API | HackVerse 2026
+        </footer>
     </div>
 
-    <!-- Form -->
-
-    <div class="form">
-
-        <input type="text" id="branch" placeholder="🎓 Branch (CSE, ECE...)">
-
-        <input type="text" id="semester" placeholder="📖 Semester">
-
-        <input type="text" id="skills" placeholder="💻 Current Skills">
-
-        <input type="text" id="goal" placeholder="🎯 Career Goal">
-
-        <input type="number" id="hours" placeholder="⏰ Study Hours Per Week">
-
-        <button onclick="generateRoadmap()">
-            🚀 Generate AI Roadmap
-        </button>
-
-    </div>
-
-    <!-- Output -->
-
-    <div class="result">
-
-        <h2>📋 AI Generated Career Roadmap</h2>
-
-        <pre id="output">
-Your roadmap will appear here...
-        </pre>
-
-    </div>
-
-</div>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 
 </body>
+
 </html>
